@@ -27,17 +27,8 @@ from istkharxmusic.utils.inline import first_page, private_panel, start_panel
 from config import BANNED_USERS, AYUV
 from strings import get_string
 
-FSEC_VID = [
-    "https://telegra.ph/file/9b7e1b820c72a14d90be7.mp4",
-    "https://telegra.ph/file/a4d90b0cb759b67d68644.mp4",
-    "https://telegra.ph/file/72f349b1386d6d9374a38.mp4",
-    "https://telegra.ph/file/2b75449612172a96d4599.mp4",
-    "https://telegra.ph/file/b3ac2d77205d5ded860de.mp4",
-    "https://telegra.ph/file/58ae4ac86ef70dc8c8f6a.mp4",
-    "https://telegra.ph/file/c6c1ac9aee4192a8a3747.mp4",
-    "https://telegra.ph/file/55c840c8eba0555318f0d.mp4",
-    "https://telegra.ph/file/e97715885d0a0cfbddaaa.mp4",
-    "https://telegra.ph/file/943bb99829ec526c3f99a.mp4"
+ANNIE_VID = [
+    "https://graph.org/file/c4bfd969b726a9039d295.jpg"
 ]
 
 STICKERS = [
@@ -62,8 +53,8 @@ async def start_pm(client, message: Message, _):
             keyboard = help_pannel(_)
             sticker_message = await message.reply_sticker(sticker=random.choice(STICKERS))
             asyncio.create_task(delete_sticker_after_delay(sticker_message, 2))  # Delete sticker after 2 seconds
-            await message.reply_video(
-                random.choice(FSEC_VID),
+            await message.reply_photo(
+                random.choice(ANNIE_VID),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
@@ -118,8 +109,8 @@ async def start_pm(client, message: Message, _):
         served_chats = len(await get_served_chats())
         served_users = len(await get_served_users())
         UP, CPU, RAM, DISK = await bot_sys_stats()
-        await message.reply_video(
-            random.choice(FSEC_VID),
+        await message.reply_photo(
+            random.choice(ANNIE_VID),
             caption=random.choice(AYUV).format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM, served_users, served_chats),
             reply_markup=InlineKeyboardMarkup(out),
         )
@@ -134,8 +125,8 @@ async def start_pm(client, message: Message, _):
 async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
-    await message.reply_video(
-        random.choice(FSE_VID),
+    await message.reply_photo(
+        random.choice(ANNIE_VID),
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
@@ -168,8 +159,8 @@ async def welcome(client, message: Message):
                     return await app.leave_chat(message.chat.id)
 
                 out = start_panel(_)
-                await message.reply_video(
-                    random.choice(FSEC_VID),
+                await message.reply_photo(
+                random.choice(ANNIE_VID),
                     caption=_["start_3"].format(
                         message.from_user.mention,
                         app.mention,
