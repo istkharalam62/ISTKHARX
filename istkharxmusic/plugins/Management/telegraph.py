@@ -22,10 +22,10 @@ async def get_link_group(client, message):
             local_path = await message.reply_to_message.download(
                 location, progress=progress
             )
-            await text.edit_text("ðŸ“¤ á´œá´˜ÊŸá´á´€á´…ÉªÉ´É¢ á´›á´ á´›á´‡ÊŸá´‡É¢Ê€á´€á´˜Êœ...")
+            await text.edit_text("𝐌𝙰𝙺𝙴 𝐀 𝐋𝙸𝙽𝙺..")
             upload_path = upload_file(local_path)
             await text.edit_text(
-                f"ðŸŒ | [á´›á´‡ÊŸá´‡É¢Ê€á´€á´˜Êœ ÊŸÉªÉ´á´‹](https://telegra.ph{upload_path[0]})",
+                f"ðŸŒ | [LO HO GYA ISTKHAR KO PAPA BOL](https://telegra.ph{upload_path[0]})",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
