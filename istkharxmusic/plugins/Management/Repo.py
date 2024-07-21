@@ -62,7 +62,7 @@ async def repo(_, message):
             list_of_users += f"{count}. [{user['login']}]({user['html_url']})\n"
             count += 1
 
-        text = f"""[ʀᴇᴘᴏ](https://graph.org/file/c4bfd969b726a9039d295.jpg) | [𝖦𝖱𝖮𝖴𝖯](https://t.me/Istkhar_bot)
+        text = f"""[ʀᴇᴘᴏ](https://github.com/istkharalam62/ISTKHARX) | [𝖦𝖱𝖮𝖴𝖯](https://t.me/Istkhar_bot)
 | ᴄᴏɴᴛʀɪʙᴜᴛᴏʀs |
 ----------------
 {list_of_users}"""
