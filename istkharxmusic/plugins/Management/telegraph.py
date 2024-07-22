@@ -1,46 +1,31 @@
-import os
-from pyrogram import filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telegraph import upload_file
+from pyrogram import filters
 from istkharxmusic import app
+from pyrogram.types import InputMediaPhoto
 
 
-@app.on_message(filters.command(["tgm", "tgt", "telegraph", "tl"]))
-async def get_link_group(client, message):
-    if not message.reply_to_message:
-        return await message.reply_text(
-            "á´˜ÊŸá´‡á´€sá´‡ Ê€á´‡á´˜ÊŸÊ á´›á´ á´€ á´á´‡á´…Éªá´€ á´›á´ á´œá´˜ÊŸá´á´€á´… á´É´ á´›á´‡ÊŸá´‡É¢Ê€á´€á´˜Êœ"
-        )
-    try:
-        text = await message.reply("á´˜Ê€á´á´„á´‡ssÉªÉ´É¢...")
+@app.on_message(filters.command(["tgm" , "telegraph"]))
+def ul(_, message):
+    reply = message.reply_to_message
+    if reply.media:
+        i = message.reply("𝐌𝙰𝙺𝙴 𝐀 𝐋𝙸𝙽𝙺...")
+        path = reply.download()
+        fk = upload_file(path)
+        for x in fk:
+            url = "https://telegra.ph" + x
 
-        async def progress(current, total):
-            await text.edit_text(f"ðŸ“¥ á´…á´á´¡É´ÊŸá´á´€á´…ÉªÉ´É¢... {current * 100 / total:.1f}%")
+        i.edit(f'Yᴏᴜʀ ʟɪɴᴋ sᴜᴄᴄᴇssғᴜʟ Gᴇɴ {url}')
 
-        try:
-            location = f"cache"
-            local_path = await message.reply_to_message.download(
-                location, progress=progress
-            )
-            await text.edit_text("𝐌𝙰𝙺𝙴 𝐀 𝐋𝙸𝙽𝙺..")
-            upload_path = upload_file(local_path)
-            await text.edit_text(
-                f"ðŸŒ | [LO HO GYA ISTKHAR KO PAPA BOL](https://telegra.ph{upload_path[0]})",
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "á´›á´‡ÊŸá´‡É¢Ê€á´€á´˜Êœ ÊŸÉªÉ´á´‹",
-                                url=f"https://telegra.ph{upload_path[0]}",
-                            )
-                        ]
-                    ]
-                ),
-            )
-            os.remove(local_path)
-        except Exception as e:
-            await text.edit_text(f"âŒ |Ò“ÉªÊŸá´‡ á´œá´˜ÊŸá´á´€á´… Ò“á´€ÉªÊŸá´‡á´… \n\n<i>Ê€á´‡á´€sá´É´: {e}</i>")
-            os.remove(local_path)
-            return
-    except Exception:
-        pass
+########____________________________________________________________######
+
+@app.on_message(filters.command(["graph" , "grf"]))
+def ul(_, message):
+    reply = message.reply_to_message
+    if reply.media:
+        i = message.reply("𝐌𝙰𝙺𝙴 𝐀 𝐋𝙸𝙽𝙺...")
+        path = reply.download()
+        fk = upload_file(path)
+        for x in fk:
+            url = "https://graph.org" + x
+
+        i.edit(f'Yᴏᴜʀ ʟɪɴᴋ sᴜᴄᴄᴇssғᴜʟ Gᴇɴ {url}')
