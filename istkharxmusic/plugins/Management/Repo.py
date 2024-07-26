@@ -6,7 +6,7 @@ from config import BOT_USERNAME
 from istkharxmusic.utils.errors import capture_err
 
 start_txt = """**
-➤ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ istkhar ᴍʏ ᴡᴏʀʟᴅ ᥫᩣ
+➤ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴡᴏʀʟᴅ ᥫᩣ
  
  ⦿ ʀᴇᴘᴏ ᴇᴀsɪʟʏ ᴅᴇᴘʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ ɴ ᴠᴘs ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ᴇʀʀᴏʀ !
  
@@ -24,14 +24,14 @@ start_txt = """**
 async def start(_, msg):
     buttons = [
         [ 
-          InlineKeyboardButton("⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/VeenaMusic_bot?startgroup=true")
+          InlineKeyboardButton("⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
         ],
         [
-          InlineKeyboardButton("ʜᴇʟᴘ", url="https://t.me/Veena_Networks"),
+          InlineKeyboardButton("ʜᴇʟᴘ", url="https://t.me/PURVI_UPDATES"),
           InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/ll_ISTKHAR_lll"),
         ],
         [
-          InlineKeyboardButton("ᴍᴜsɪᴄ ʙᴏᴛ ʀᴇᴘᴏ", url=f"VeenaMusic_bot"),
+          InlineKeyboardButton("ᴍᴜsɪᴄ ʙᴏᴛ ʀᴇᴘᴏ", url=f"https://github.com/istkharalam62/ISTKHARX"),
         ]
     ]
     
@@ -62,7 +62,7 @@ async def repo(_, message):
             list_of_users += f"{count}. [{user['login']}]({user['html_url']})\n"
             count += 1
 
-        text = f"""[ʀᴇᴘᴏ](https://github.com/istkharalam62/ISTKHARX) | [𝖦𝖱𝖮𝖴𝖯](https://t.me/Istkhar_bot)
+        text = f"""[ʀᴇᴘᴏ](https://github.com/istkharalam62/ISTKHARX) | [𝖦𝖱𝖮𝖴𝖯](https://t.me/purvi_support)
 | ᴄᴏɴᴛʀɪʙᴜᴛᴏʀs |
 ----------------
 {list_of_users}"""
