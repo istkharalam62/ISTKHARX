@@ -46,7 +46,7 @@ async def userdel(client, message: Message, _):
 
 
 
-GAMDOP = "https://telegra.ph/file/70e3c34efd54d68249d34.jpg"
+GAMDOP = "https://telegra.ph/file/cc14d740860df91dcd54a.jpg"
 
 @app.on_message(filters.command(["sudolist", "listsudo", "sudoers"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & ~BANNED_USERS)
 async def sudoers_list(client, message: Message):
@@ -59,7 +59,7 @@ async def sudoers_list(client, message: Message):
 async def check_sudo_list(client, callback_query: CallbackQuery):
     keyboard = []
     if callback_query.from_user.id not in SUDOERS:
-        return await callback_query.answer("➤ ❤️💕❣️🥀", show_alert=True)
+        return await callback_query.answer("➤ 𝐓𝐞𝐫𝐢 𝐌𝐚𝐚 𝐊𝐢 𝐂𝐡𝐮𝐭𝐭 𝐒𝐚𝐥𝐞 𝐋𝐮𝐧𝐝 𝐋𝐞 𝐋𝐞 𝐈𝐬𝐭𝐤𝐡𝐚𝐫 𝐊𝐚 🖕 𝐒𝐮𝐝𝐨𝐥𝐢𝐬𝐭 𝐊𝐞 𝐁𝐚𝐝𝐥𝐞 😂😂", show_alert=True)
     else:
         user = await app.get_users(OWNER_ID)
 
